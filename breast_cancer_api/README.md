@@ -34,3 +34,52 @@ http://127.0.0.1:8000/docs
 ## Endpoint
 
 POST /predict
+
+## Como executar com Docker
+
+Construa a imagem:
+
+```bash
+docker build -t breast-cancer-api .
+```
+
+Execute o container:
+
+```bash
+docker run -p 8000:8000 breast-cancer-api
+```
+
+Acesse a documentação Swagger:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+## Validação via Docker
+
+A API foi executada com sucesso dentro de um container Docker.
+
+Fluxo validado:
+
+```text
+Docker container
+↓
+FastAPI
+↓
+modelo_cancer.pkl
+↓
+Random Forest
+↓
+Resposta JSON com predição e probabilidades
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "predicao": 1,
+  "classe": "Benigno",
+  "probabilidade_classe_0": 0.14,
+  "probabilidade_classe_1": 0.86
+}
+```
