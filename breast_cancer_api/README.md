@@ -86,3 +86,42 @@ Exemplo de resposta:
 }
 ```
 
+## Deploy em AWS EC2
+
+A API foi publicada em uma instância AWS EC2 utilizando Docker.
+
+Fluxo de deploy validado:
+
+```text
+GitHub
+↓
+EC2 Ubuntu
+↓
+Docker build
+↓
+Docker run
+↓
+FastAPI pública via porta 8000
+
+http://54.226.157.2:8000/docs
+
+
+Comandos principais utilizados na EC2:
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker ubuntu
+git clone https://github.com/Caredu7Lakes/breast-cancer-fastapi-mlops.git
+cd breast-cancer-fastapi-mlops/breast_cancer_api
+docker build -t breast-cancer-api .
+docker run -d -p 8000:8000 breast-cancer-api
+```
+
+Validação:
+
+- Swagger acessível publicamente
+- Endpoint `/predict` validado
+- Modelo Random Forest carregado dentro do container
