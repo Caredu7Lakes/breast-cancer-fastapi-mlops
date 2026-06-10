@@ -125,3 +125,30 @@ Validação:
 - Swagger acessível publicamente
 - Endpoint `/predict` validado
 - Modelo Random Forest carregado dentro do container
+
+
+## Comandos de manutenção
+
+Ver containers em execução:
+
+```bash
+docker ps
+```
+
+Ver logs do container:
+
+```bash
+docker logs NOME_OU_ID_DO_CONTAINER
+```
+
+Parar o container:
+
+```bash
+docker stop NOME_OU_ID_DO_CONTAINER
+```
+
+Reiniciar o container:
+
+```bash
+docker restart NOME_OU_ID_DO_CONTAINER
+```
