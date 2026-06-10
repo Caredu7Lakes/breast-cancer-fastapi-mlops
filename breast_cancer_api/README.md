@@ -1,5 +1,7 @@
 # Breast Cancer Prediction API
 
+[![FastAPI ML API CI](https://github.com/Caredu7Lakes/breast-cancer-fastapi-mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/Caredu7Lakes/breast-cancer-fastapi-mlops/actions/workflows/ci.yml)
+
 API desenvolvida com FastAPI para disponibilizar um modelo de Machine Learning treinado para classificação de tumores mamários.
 
 ## Objetivo
@@ -83,3 +85,4 @@ Exemplo de resposta:
   "probabilidade_classe_1": 0.86
 }
 ```
+
